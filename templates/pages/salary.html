@@ -1,0 +1,32 @@
+<section data-page="salary" hidden>
+    <h2 class="page-title">Зарплата</h2>
+
+    <div class="card">
+        <p class="card-label">Ожидаемая зарплата за месяц</p>
+        <p class="heroval" id="salaryHeroValue">0 ₽</p>
+        <p class="card-sub" id="salaryHeroSub">0 ч · ставка 480 ₽/ч</p>
+    </div>
+
+    <div class="row-2">
+        <div class="card">
+            <p class="card-label" id="salaryRateLabel">Ставка</p>
+            <p class="metric-value" id="salaryRateValue">480 ₽</p>
+            <p class="card-sub" id="salaryRateSub">за час</p>
+        </div>
+        <div class="card">
+            <p class="card-label">Смен в месяце</p>
+            <p class="metric-value" id="salaryShiftCount">0</p>
+            <p class="card-sub" id="salaryMonthSub"></p>
+        </div>
+    </div>
+
+    <div class="card">
+        <p class="card-label" style="margin-bottom: 2px;">Статистика месяца</p>
+        <div class="listrow"><span class="lname">Часы</span><span class="lamount" id="statHours">0 ч</span></div>
+        <div class="listrow"><span class="lname">Средняя смена</span><span class="lamount" id="statAvgShift">0 ч</span></div>
+        <div class="listrow"><span class="lname">Отпуск</span><span class="lamount" id="statVacation">0 дн.</span></div>
+        <div class="listrow"><span class="lname">Больничный</span><span class="lamount" id="statSick">0 дн.</span></div>
+    </div>
+
+    <p class="field-error" id="salaryRateWarning" hidden></p>
+</section>

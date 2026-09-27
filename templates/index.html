@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory Helper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% include "components/header.html" %}
+
+    <main>
+        {% include "pages/dashboard.html" %}
+        {% include "pages/calendar.html" %}
+        {% include "pages/salary.html" %}
+        {% include "pages/more.html" %}
+        
+    </main>
+
+    {% include "components/navbar.html" %}
+    {% include "components/bottom_sheet.html" %}
+    {% include "components/bottom_sheet.html" %}
+    {% include "components/calculator.html" %}
+    <script src="{{ url_for('static', filename='js/calculator.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/navigations.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/ui.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/store.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/calc.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/pages/calendar.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/pages/dashboard.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/pages/salary.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/pages/more.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<section data-page="more">
+    <h2 class="page-title">Ещё</h2>
+
+    <div class="more-menu" id="moreMenu">
+        <button class="more-menu-item" data-target="notes">
+            <span class="more-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16.5V20h3.5L18.5 9 15 5.5 4 16.5z"/></svg></span>
+            Заметки
+            <span class="more-menu-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+        </button>
+        <button class="more-menu-item" data-target="reminders">
+            <span class="more-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 1112 0c0 4 1.5 5.5 1.5 5.5H4.5S6 13 6 9z"/><path d="M10 19a2 2 0 004 0"/></svg></span>
+            Напоминания
+            <span class="more-menu-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+        </button>
+        <button class="more-menu-item" data-target="settings">
+            <span class="more-menu-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82 2 2 0 11-2.83 2.83 1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33 2 2 0 11-2.83-2.83A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82 2 2 0 112.83-2.83A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33 2 2 0 112.83 2.83A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></span>
+            Настройки
+            <span class="more-menu-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+        </button>
+    </div>
+
+    <div class="more-subview" id="moreView-notes" hidden>
+        <div class="subview-header">
+            <button class="back-btn" data-back aria-label="Назад"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <h3 class="subview-title">Заметки</h3>
+        </div>
+        <div class="card">
+            <div class="note-compose">
+                <input class="field-input" type="text" id="noteInput" placeholder="Новая заметка...">
+                <button class="btn-primary" id="noteAddBtn" style="padding: 0 16px;">+</button>
+            </div>
+        </div>
+        <div id="notesList"></div>
+    </div>
+
+    <div class="more-subview" id="moreView-reminders" hidden>
+        <div class="subview-header">
+            <button class="back-btn" data-back aria-label="Назад"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <h3 class="subview-title">Напоминания</h3>
+        </div>
+        <p class="reminder-note">Список сохраняется, но само уведомление на телефон пока не приходит — нужен отдельный технический шаг. Все будет, но позже</p>
+        <div class="card">
+            <div class="field">
+                <label class="field-label" for="reminderLabel">Текст</label>
+                <input class="field-input" type="text" id="reminderLabel" placeholder="Например, обед">
+            </div>
+            <div class="field-row" style="margin-top: 10px;">
+                <div class="field">
+                    <label class="field-label" for="reminderDate">Дата</label>
+                    <input class="field-input" type="date" id="reminderDate">
+                </div>
+                <div class="field">
+                    <label class="field-label" for="reminderTime">Время</label>
+                    <input class="field-input" type="time" id="reminderTime">
+                </div>
+            </div>
+            <button class="btn-primary" id="reminderAddBtn" style="margin-top: 10px;">Добавить</button>
+        </div>
+        <div id="remindersList"></div>
+    </div>
+
+    <div class="more-subview" id="moreView-settings" hidden>
+        <div class="subview-header">
+            <button class="back-btn" data-back aria-label="Назад"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <h3 class="subview-title">Настройки</h3>
+        </div>
+
+        <div class="card">
+            <p class="card-label">Тип начисления</p>
+            <select class="field-input" id="accrualType">
+                <option value="hourly_static">Почасовая (статичная)</option>
+                <option value="hourly_monthly">Почасовая (по месяцам)</option>
+                <option value="oklad">Оклад</option>
+                <option value="oklad_percent">Оклад + процент</option>
+            </select>
+        </div>
+
+        <div class="card" id="hourlyRateField">
+            <p class="card-label">Ставка</p>
+            <div class="field-row-inline">
+                <input class="field-input" type="number" id="hourlyRate" min="0" step="1">
+                <span class="field-suffix">₽/ч</span>
+            </div>
+        </div>
+
+        <div class="card" id="monthlyRateField">
+            <p class="card-label" style="margin-bottom: 10px;">Ставка за месяц</p>
+            <div class="field">
+                <label class="field-label" for="rateMonth">Месяц</label>
+                <input class="field-input" type="month" id="rateMonth">
+            </div>
+            <div class="field-row-inline" style="margin-top: 10px;">
+                <input class="field-input" type="number" id="rateMonthValue" min="0" step="1">
+                <span class="field-suffix">₽/ч</span>
+            </div>
+            <button class="btn-primary" id="saveMonthlyRateBtn" style="margin-top: 10px;">Сохранить ставку за месяц</button>
+            <div id="monthlyRatesList" style="margin-top: 12px;"></div>
+        </div>
+
+        <div class="card" id="okladField">
+            <p class="card-label">Оклад</p>
+            <div class="field-row-inline">
+                <input class="field-input" type="number" id="oklad" min="0" step="1000">
+                <span class="field-suffix">₽/мес</span>
+            </div>
+        </div>
+
+        <div class="card" id="okladPercentField">
+            <p class="card-label">Процент надбавки</p>
+            <div class="field-row-inline">
+                <input class="field-input" type="number" id="okladPercent" min="0" step="1">
+                <span class="field-suffix">%</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <p class="card-label" style="margin-bottom: 10px;">Коэффициенты</p>
+            <div class="field">
+                <label class="field-label" for="weekendCoefficient">Коэффициент выходных (по графику)</label>
+                <input class="field-input" type="number" id="weekendCoefficient" min="1" step="0.1">
+            </div>
+            <div class="field" style="margin-top: 10px;">
+                <label class="field-label" for="overtimeCoefficient">Коэффициент переработки</label>
+                <input class="field-input" type="number" id="overtimeCoefficient" min="1" step="0.1">
+            </div>
+            <div class="field" style="margin-top: 10px;">
+                <label class="field-label" for="normHoursPerShift">Норма часов на смену</label>
+                <input class="field-input" type="number" id="normHoursPerShift" min="1" step="0.5">
+            </div>
+        </div>
+
+        <div class="card">
+            <label class="checkbox-field" for="breaksEnabled">
+                <input type="checkbox" id="breaksEnabled">
+                Вычитать перерывы из смены
+            </label>
+            <div class="field" id="breakHoursField" style="margin-top: 10px;">
+                <label class="field-label" for="breakHours">Часы перерыва</label>
+                <input class="field-input" type="number" id="breakHours" min="0" step="0.5">
+            </div>
+        </div>
+
+        <div class="card">
+            <p class="card-label">Период расчёта зарплаты</p>
+            <select class="field-input" id="salaryPeriodMode">
+                <option value="calendar_month">Календарный месяц</option>
+                <option value="custom_period">Свой период (по дням зарплаты)</option>
+            </select>
+            <div class="field-row" id="paydayFields" style="margin-top: 10px;">
+                <div class="field">
+                    <label class="field-label" for="payday1">1-я выплата (день)</label>
+                    <input class="field-input" type="number" id="payday1" min="1" max="31" step="1">
+                </div>
+                <div class="field">
+                    <label class="field-label" for="payday2">2-я выплата (день)</label>
+                    <input class="field-input" type="number" id="payday2" min="1" max="31" step="1">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <p class="card-label">График смен</p>
+            <select class="field-input" id="schedulePattern">
+                <option value="5x2">5/2 (стандартная)</option>
+                <option value="2x2">2/2</option>
+                <option value="3x3">3/3</option>
+                <option value="4x2">4/2</option>
+            </select>
+            <div class="field" id="scheduleAnchorField" style="margin-top: 10px;">
+                <label class="field-label" for="scheduleAnchor">Первый рабочий день цикла</label>
+                <input class="field-input" type="date" id="scheduleAnchor">
+            </div>
+        </div>
+
+        <button class="btn-primary" id="saveSettingsBtn">Сохранить настройки</button>
+        <p class="field-hint" id="settingsSaved" hidden>Сохранено</p>
+    </div>
+</section>

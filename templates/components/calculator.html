@@ -1,0 +1,39 @@
+<div class="calc-overlay" id="calculatorOverlay">
+    <div class="calc-modal">
+        <div class="sheet-header">
+            <h3 class="sheet-title">Калькулятор</h3>
+            <button class="sheet-close" id="calcCloseBtn" aria-label="Закрыть">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+        </div>
+
+        <div class="calc-display" id="calcDisplay">0</div>
+
+        <div class="calc-grid">
+            <button class="calc-btn calc-btn-fn" data-calc-action="clear">C</button>
+            <button class="calc-btn calc-btn-fn" data-calc-action="backspace">⌫</button>
+            <button class="calc-btn calc-btn-op" data-calc-op="÷">÷</button>
+            <button class="calc-btn calc-btn-op" data-calc-op="×">×</button>
+
+            <button class="calc-btn" data-calc-digit="7">7</button>
+            <button class="calc-btn" data-calc-digit="8">8</button>
+            <button class="calc-btn" data-calc-digit="9">9</button>
+            <button class="calc-btn calc-btn-op" data-calc-op="−">−</button>
+
+            <button class="calc-btn" data-calc-digit="4">4</button>
+            <button class="calc-btn" data-calc-digit="5">5</button>
+            <button class="calc-btn" data-calc-digit="6">6</button>
+            <button class="calc-btn calc-btn-op" data-calc-op="+">+</button>
+
+            <button class="calc-btn" data-calc-digit="1">1</button>
+            <button class="calc-btn" data-calc-digit="2">2</button>
+            <button class="calc-btn" data-calc-digit="3">3</button>
+            <button class="calc-btn calc-btn-eq" data-calc-action="equals" style="grid-row: span 2;">=</button>
+
+            <button class="calc-btn" data-calc-digit="0" style="grid-column: span 2;">0</button>
+            <button class="calc-btn" data-calc-digit=".">.</button>
+        </div>
+
+        <button class="btn-primary" id="calcUseAsRateBtn">Использовать как ставку</button>
+    </div>
+</div>

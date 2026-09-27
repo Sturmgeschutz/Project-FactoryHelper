@@ -1,0 +1,61 @@
+<div class="sheet-overlay" id="sheetOverlay">
+    <div class="bottom-sheet" id="bottomSheet">
+        <div class="sheet-handle"></div>
+        <div class="sheet-header">
+            <h3 class="sheet-title" id="sheetTitle">Добавить</h3>
+            <button class="sheet-close" id="sheetClose" aria-label="Закрыть">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+        </div>
+
+        <div class="sheet-actions" id="sheetActions">
+            <button class="sheet-action" data-action="shift">
+                <span class="sheet-action-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+                Добавить смену
+            </button>
+            <button class="sheet-action" data-action="vacation">
+                <span class="sheet-action-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/></svg></span>
+                Отпуск
+            </button>
+            <button class="sheet-action" data-action="sick">
+                <span class="sheet-action-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg></span>
+                Больничный
+            </button>
+            <button class="sheet-action danger" data-action="clear" id="clearAction" hidden>
+                <span class="sheet-action-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+                Очистить день
+            </button>
+        </div>
+
+        <form class="shift-form" id="shiftForm" hidden>
+            <div class="field">
+                <label class="field-label" for="shiftDate">Дата</label>
+                <input class="field-input" type="date" id="shiftDate" required>
+            </div>
+
+            <div class="template-chips">
+                <button type="button" class="template-chip" data-start="09:00" data-end="18:00">Дневная 09–18</button>
+                <button type="button" class="template-chip" data-start="09:00" data-end="22:00">Полная 12</button>
+                <div class="template-chip custom-chip">
+                    <span class="custom-chip-label" id="customChipLabel">Своя — не задана</span>
+                    <button type="button" class="custom-chip-edit" id="customChipEdit" aria-label="Сохранить как «Свою»">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16.5V20h3.5L18.5 9 15 5.5 4 16.5z"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="field-row">
+                <div class="field">
+                    <label class="field-label" for="shiftStart">Начало смены</label>
+                    <input class="field-input" type="time" id="shiftStart" value="08:00" required>
+                </div>
+                <div class="field">
+                    <label class="field-label" for="shiftEnd">Конец смены</label>
+                    <input class="field-input" type="time" id="shiftEnd" value="20:00" required>
+                </div>
+            </div>
+            <p class="field-error" id="shiftError" hidden></p>
+            <button class="btn-primary" type="submit">Сохранить</button>
+        </form>
+    </div>
+</div>

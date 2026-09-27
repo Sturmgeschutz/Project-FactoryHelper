@@ -1,0 +1,36 @@
+<section data-page="calendar" hidden>
+    <h2 class="page-title">Календарь</h2>
+
+    <div class="month-nav">
+        <button class="month-nav-btn" id="prevMonthBtn" aria-label="Предыдущий месяц">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <span class="month-label" id="monthLabel">—</span>
+        <button class="month-nav-btn" id="nextMonthBtn" aria-label="Следующий месяц">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+    </div>
+
+    <div class="weekdays">
+        <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+    </div>
+
+    <div class="day-grid" id="dayGrid"></div>
+
+    <div class="legend">
+        <span class="legend-item"><span class="legend-dot dot-shift"></span>Смена</span>
+        <span class="legend-item"><span class="legend-dot dot-vac"></span>Отпуск</span>
+        <span class="legend-item"><span class="legend-dot dot-sick"></span>Больничный</span>
+        <span class="legend-item"><span class="legend-dot dot-today"></span>Сегодня</span>
+    </div>
+
+    <div class="card day-card">
+        <div>
+            <p class="card-title" id="dayCardTitle">—</p>
+            <p class="card-sub" id="dayCardSub">—</p>
+        </div>
+        <button class="day-add-btn" id="dayAddBtn" aria-label="Добавить событие">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+    </div>
+</section>
